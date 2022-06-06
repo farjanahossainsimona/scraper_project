@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Dashboard{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  {% if g.user %}
+	</br>
+	<form method="POST">
+    <input type = "text" name="url"></input>
+	<input type="submit" value="URL"></input>
+	</form>
+	 
+	{% if results %}
+		<div>
+			Requested URL: {{url}} 
+		</div>
+		</br>
+		<div>
+			Excel sheet writing successfull.
+		</div>
+	{% endif %}
+	
+  {% endif %}
+  
+{% endblock %}
